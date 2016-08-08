@@ -11,7 +11,6 @@ public class MainActivity extends BaseFragmentActivity implements BottomTabLayou
     private static final String tab4 = "tab4";
     private static final String tab5 = "tab5";
 
-
     BottomTabLayout bottomTabLayout;
 
     @Override
@@ -20,7 +19,7 @@ public class MainActivity extends BaseFragmentActivity implements BottomTabLayou
         setContentView(R.layout.activity_main);
         bottomTabLayout = (BottomTabLayout) findViewById(R.id.bottomTabLayout);
         bottomTabLayout.bind(this);
-        if (currentFragmentTag == null) {
+        if (isInitFragment) {
             bottomTabLayout.findViewById(R.id.tab1).performClick();
         }
     }

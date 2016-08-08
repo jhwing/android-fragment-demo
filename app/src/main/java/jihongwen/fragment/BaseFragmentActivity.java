@@ -16,6 +16,7 @@ public abstract class BaseFragmentActivity extends AppCompatActivity {
 
     protected FragmentManager fm;
     protected String currentFragmentTag;
+    protected boolean isInitFragment = true;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -23,6 +24,9 @@ public abstract class BaseFragmentActivity extends AppCompatActivity {
         fm = getSupportFragmentManager();
         if (savedInstanceState != null) {
             currentFragmentTag = savedInstanceState.getString("currentFragmentTag");
+            isInitFragment = false;
+        } else {
+            isInitFragment = true;
         }
     }
 
